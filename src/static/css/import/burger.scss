@@ -1,0 +1,54 @@
+.burger {
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  background: transparent;
+  position: fixed;
+  right: 20px;
+  z-index: 10;
+  width: 21px;
+  cursor: pointer;
+  display: none;
+  @media(max-width: $container-md) {
+    display: flex;
+  }
+  span {
+    display: block;
+    width: 16px;
+    height: 2px;
+    margin-bottom: 6px;
+    background: $black;
+    transition: all .3s ease;
+    &:first-child {
+      width: 21px;
+    }
+    &:last-child {
+      width: 10px
+    }
+  }
+  &:hover span {
+    //width: 65%;
+    //background: $orange;
+  }
+}
+.burger.open {
+  top: 25px;
+  right: 15px;
+  span {
+    width: 100%;
+    background: $black;
+    &:hover {
+      //background: $orange;
+    }
+  }
+  span:last-child {
+    display: none;
+  }
+  span:first-child {
+    transform: rotate(45deg);
+    margin-bottom: -1px;
+  }
+  span:nth-child(2n) {
+    transform: rotate(-45deg);
+  }
+}

@@ -1,0 +1,13 @@
+.store {
+  display: flex;
+  margin-right: 55px;
+  &__item {
+    margin-left: 7px;
+  }
+
+  &__icon {
+    width: 30px !important;
+    height: 30px;
+  }
+
+}

@@ -1,0 +1,89 @@
+.app {
+  overflow: hidden;
+  position: relative;
+  background: #d7d7d7 url("../img/app-bg.png") no-repeat center center;
+  //background-size: cover;
+  padding-top: 110px;
+  padding-bottom: 200px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: -195px;
+    width: 50%;
+    background: url("../img/bg-left.png") no-repeat;
+    background-size: contain;
+    height: 100%;
+    background-position: center center;
+    @media(max-width: $container-sm) {
+      display: none;
+    }
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 120px;
+    right: -230px;
+    width: 50%;
+    background: url("../img/bg-right.png") no-repeat;
+    background-size: contain;
+    height: 100%;
+    background-position: center center;
+    @media(max-width: $container-sm) {
+      display: none;
+    }
+  }
+  @media(max-width: $container-md) {
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 50px;
+  }
+}
+
+.container {
+  max-width: $container;
+  width: 100%;
+  margin: auto;
+  padding: 0 20px;
+
+  @media(max-width: $container-md) {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  @media(max-width: $container-sm) {
+    max-width: 100%;
+  }
+}
+
+.lang {
+  position: relative;
+  width: 45px;
+  cursor: pointer;
+  @media(max-width: $container-md) {
+    margin-right: 45px;
+  }
+  &-link {
+    position: relative;
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #1d1d1d;
+  }
+  &-icon {
+    position: absolute;
+    top: 3px;
+    right: 0;
+  }
+}
+
+.lang-submenu {
+  position: absolute;
+  top: 25px;
+  display: none;
+  opacity: 0;
+  transition: all .3s ease-in-out;
+  &.active {
+    display: block;
+    opacity: 1;
+  }
+}

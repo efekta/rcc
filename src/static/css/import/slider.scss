@@ -1,0 +1,33 @@
+.slider .slick-track {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.slider {
+  &__item {
+    padding: 30px;
+    margin-top: -2px;
+    border-right: 1px solid #b1afae;
+    border-top: 1px solid #b1afae;
+    img {
+      width: 85px;
+      object-fit: cover;
+      margin: auto;
+    }
+  }
+}
+
+.slick-dots li button {
+  border: 1px solid #898989;
+  border-radius: 50%;
+}
+
+.slick-dots li button:before {
+  font-size: 16px;
+  color: #898989 !important;
+  //opacity: 1 !important;
+  top: 1px;
+  left: 2.5px;
+  width: 16px;
+  height: 16px;
+}

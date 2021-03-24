@@ -1,0 +1,24 @@
+include ../includes/mixins.pug
+doctype html
+block vars
+html(lang="ru-RU")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" , content="width=device-width, initial-scale=1")
+        title #{title}
+        include ../includes/links.pug
+    body
+        .app
+            .container
+                block header
+            .container
+                block content
+
+
+        script(src="libs/jquery/jquery-3.4.1.min.js")
+        script(src="libs/maskedinput/jquery.maskedinput.min.js")
+        script(src="libs/slick/slick.min.js")
+        script(src="libs/fontawesome/svg-with-js/js/fontawesome-all.min.js")
+        script(src="js/common.js")
+
+
