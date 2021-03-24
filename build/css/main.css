@@ -533,47 +533,14 @@ select:-webkit-autofill:focus {
 }
 
 .app {
-  overflow: hidden;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
   position: relative;
   background: #d7d7d7 url("../img/app-bg.png") no-repeat center center;
+  background-size: cover;
   padding-top: 110px;
-  padding-bottom: 200px;
-}
-
-.app::before {
-  content: "";
-  position: absolute;
-  top: 0px;
-  left: -195px;
-  width: 50%;
-  background: url("../img/bg-left.png") no-repeat;
-  background-size: contain;
-  height: 100%;
-  background-position: center center;
-}
-
-@media (max-width: 1024px) {
-  .app::before {
-    display: none;
-  }
-}
-
-.app::after {
-  content: "";
-  position: absolute;
-  top: 120px;
-  right: -230px;
-  width: 50%;
-  background: url("../img/bg-right.png") no-repeat;
-  background-size: contain;
-  height: 100%;
-  background-position: center center;
-}
-
-@media (max-width: 1024px) {
-  .app::after {
-    display: none;
-  }
+  padding-bottom: 150px;
 }
 
 @media (max-width: 1110px) {
@@ -673,6 +640,10 @@ select:-webkit-autofill:focus {
 @media (max-width: 768px) {
   .logo {
     max-width: 300px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
@@ -846,6 +817,45 @@ select:-webkit-autofill:focus {
 
 .burger.open span:nth-child(2n) {
   transform: rotate(-45deg);
+}
+
+.screen-wrapp {
+  position: relative;
+  padding: 50px 0 200px 0;
+}
+
+.screen-wrapp::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -20px;
+  width: 50%;
+  height: 100%;
+  background: url("../img/bg-left.png") no-repeat top;
+  background-size: contain;
+}
+
+@media (max-width: 1024px) {
+  .screen-wrapp::before {
+    display: none;
+  }
+}
+
+.screen-wrapp::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -50px;
+  width: 50%;
+  height: 100%;
+  background: url("../img/bg-right.png") no-repeat top;
+  background-size: contain;
+}
+
+@media (max-width: 1024px) {
+  .screen-wrapp::after {
+    display: none;
+  }
 }
 
 .screen {

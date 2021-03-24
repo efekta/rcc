@@ -13,7 +13,8 @@ $(document).ready(function(){
         window.addEventListener('resize', setHeight);
     })();
 
-    $('.lang').on('click', function () {
+    $('.lang').on('click', function (event) {
+        event.preventDefault();
         $('.lang-submenu').toggleClass('active')
     })
 

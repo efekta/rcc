@@ -1,9 +1,41 @@
+.screen-wrapp {
+  position: relative;
+  padding: 50px 0 200px 0;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -20px;
+    width: 50%;
+    height: 100%;
+    background: url("../img/bg-left.png") no-repeat top;
+    background-size: contain;
+    @media(max-width: $container-sm) {
+      display: none;
+    }
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -50px;
+    width: 50%;
+    height: 100%;
+    background: url('../img/bg-right.png') no-repeat top;
+    background-size: contain;
+
+    @media(max-width: $container-sm) {
+      display: none;
+    }
+  }
+}
 .screen {
   display: flex;
   overflow: hidden;
   height: 800px;
   position: relative;
   z-index: 3;
+
   @media(max-width: $container-sm) {
     flex-wrap: wrap;
     height: auto;
