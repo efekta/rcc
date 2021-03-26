@@ -66,3 +66,30 @@
     opacity: 1;
   }
 }
+
+.arrow-scroll {
+  display: flex;
+  justify-content: center;
+
+  &__wrap {
+    fill: $black;
+    font-size: 36px;
+    display: inline-block;
+    transition: all ease-in-out 0.2s;
+    cursor: pointer;
+    opacity: .5;
+    &:hover {
+      opacity: 1;
+    }
+    &_animated {
+      animation: arrow-scroll 1.7s infinite ease;
+    }
+  }
+  @keyframes arrow-scroll {
+    0% {transform: translateY(0)}
+    50% {transform: translateY(-7px)}
+    55% {transform: translateY(-7px)}
+    100% {transform: translateY(0)}
+  }
+}
+

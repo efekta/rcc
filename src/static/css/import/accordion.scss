@@ -13,13 +13,18 @@
   &-wrapp {
     margin-bottom: 25px;
   }
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 45px;
+    height: 1px;
+    width: calc(100% - 45px);
+    background: #acacac;
+  }
 }
 
-.active, .accordion:hover {
-  background: transparent;
-}
-
-.accordion:after {
+.accordion::after {
   content: '';
   position: absolute;
   width: 30px;
@@ -33,12 +38,16 @@
   background: url("../img/plus.png") no-repeat center;
 }
 
-.active:after {
+.accordion.active::after {
   background: url("../img/minus.png") no-repeat center;
 }
 
+.accordion.active::before {
+  display: none;
+}
+
 .panel {
-  padding: 0 18px;
+  padding: 0 15px;
   color: #212121;
   background: transparent;
   max-height: 0;
