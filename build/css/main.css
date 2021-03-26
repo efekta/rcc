@@ -1123,6 +1123,10 @@ select:-webkit-autofill:focus {
   background: transparent;
 }
 
+.accordion-wrapp {
+  margin-bottom: 25px;
+}
+
 .active, .accordion:hover {
   background: transparent;
 }
