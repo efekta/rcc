@@ -1,6 +1,10 @@
 .screen-wrapp {
   position: relative;
   padding: 50px 0 200px 0;
+  @media(max-width: $container-sm) {
+    padding-bottom: 50px;
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -103,7 +107,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  padding: 120px 50px;
+  padding: 120px 30px;
   z-index: 2;
   @media(max-width: $container-sm) {
     padding: 30px;
@@ -115,18 +119,40 @@
     color: $white;
     text-align: right;
     font-size: 36px;
+    text-transform: uppercase;
     margin-bottom: 50px;
-    @media(max-width: $container-sm) {
+    @media(max-width: $container-xs) {
       font-size: 32px;
     }
-    @media(max-width: $container-xs) {
-      font-size: 26px;
+    &--inner {
+      font-size: 24px;
+      @media(max-width: $container-xs) {
+        font-size: 20px;
+      }
+      @media(max-width: $container-mob) {
+        font-size: 14px;
+      }
     }
   }
 
   &__desc {
-    color: $white;
+    position: relative;
+    padding: 30px 15px 30px 0;
+    color: #d7d7d7;
     text-align: right;
     font-size: 18px;
+    @media(max-width: $container-mob) {
+      font-size: 14px;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 1px;
+      height: 100%;
+      background: #d7d7d7;
+
+    }
   }
 }

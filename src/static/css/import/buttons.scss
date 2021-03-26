@@ -1,0 +1,21 @@
+.btn {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.2;
+  padding: 10px;
+  border-radius: 15px;
+  display: inline-block;
+  margin: 0 10px;
+  &-dark {
+    background: $black;
+    color: $white;
+    border: 1px solid $black;
+    &:hover {
+      background: transparent;
+      color: $black;
+      border: 1px solid $black;
+    }
+  }
+}
+
+

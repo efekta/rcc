@@ -1,0 +1,10 @@
+.footer {
+  flex-shrink: 0;
+  display: none;
+  @media(max-width: $container-sm) {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px 0;
+  }
+}

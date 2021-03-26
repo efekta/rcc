@@ -9,11 +9,14 @@ html(lang="ru-RU")
         include ../includes/links.pug
     body
         .app
-            .container
-                block header
-            .screen-wrapp
+            .content
                 .container
-                    block content
+                    block header
+                .screen-wrapp
+                    .container
+                        block content
+            .container
+                block footer
 
 
         script(src="libs/jquery/jquery-3.4.1.min.js")

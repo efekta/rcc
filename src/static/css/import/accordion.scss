@@ -1,0 +1,50 @@
+.accordion {
+  position: relative;
+  cursor: pointer;
+  padding: 15px 15px 15px 45px;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  transition: 0.5s;
+  text-align: left;
+  color: $black;
+  background: transparent;
+}
+
+.active, .accordion:hover {
+  background: transparent;
+}
+
+.accordion:after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  color: $black;
+  font-size: 55px;
+  font-weight: 100;
+  background: url("../img/plus.png") no-repeat center;
+}
+
+.active:after {
+  background: url("../img/minus.png") no-repeat center;
+}
+
+.panel {
+  padding: 0 18px;
+  color: #212121;
+  background: transparent;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  text-align: center;
+}
+
+.accordion-title {
+  font-size: 14px;
+  padding-left: 45px;
+}

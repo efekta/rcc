@@ -7,4 +7,14 @@
     width: 30px !important;
     height: 30px;
   }
+  @media(max-width: $container-xs) {
+    display: none;
+  }
+}
+
+.socials-mob {
+  @media(max-width: $container-xs) {
+    display: flex;
+    margin: 15px 0;
+  }
 }

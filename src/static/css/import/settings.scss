@@ -52,6 +52,7 @@ input:hover, input:active, input:focus {
 button {
     cursor: pointer;
     outline: none;
+    transition: all .3s ease-in-out;
     &:active {
         outline: none;
     }
