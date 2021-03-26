@@ -35,8 +35,8 @@
 }
 .screen {
   display: flex;
-  overflow: hidden;
-  height: 800px;
+  //overflow: hidden;
+  //height: 800px;
   position: relative;
   z-index: 3;
 
@@ -92,11 +92,6 @@
     @media(max-width: $container-sm) {
       width: 100%;
       padding: 25px;
-    }
-    p {
-      font-size: 14px;
-      line-height: 24px;
-      margin-bottom: 30px;
     }
   }
 }
@@ -156,3 +151,4 @@
     }
   }
 }
+

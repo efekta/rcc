@@ -533,6 +533,12 @@ select:-webkit-autofill:focus {
   background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(0, 174, 255, 0.04) 50%, rgba(255, 255, 255, 0) 51%, rgba(0, 174, 255, 0.03) 100%);
 }
 
+p {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 30px;
+}
+
 .app {
   display: flex;
   flex-direction: column;
@@ -924,8 +930,6 @@ select:-webkit-autofill:focus {
 
 .screen {
   display: flex;
-  overflow: hidden;
-  height: 800px;
   position: relative;
   z-index: 3;
 }
@@ -996,12 +1000,6 @@ select:-webkit-autofill:focus {
     width: 100%;
     padding: 25px;
   }
-}
-
-.screen__content p {
-  font-size: 14px;
-  line-height: 24px;
-  margin-bottom: 30px;
 }
 
 .banner-content {
