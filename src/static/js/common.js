@@ -47,4 +47,13 @@ $(document).ready(function(){
         slidesToShow: 3,
         slidesToScroll: 6
     });
+
+    $('.slider-about').slick({
+        dots: true,
+        arrows: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 2,
+        slidesToScroll: 2
+    });
 });

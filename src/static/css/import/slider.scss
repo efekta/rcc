@@ -31,3 +31,27 @@
   width: 16px;
   height: 16px;
 }
+
+.slider-about {
+  margin-left: -30px;
+  &__item {
+    padding: 30px;
+    border-right: 1px solid #b1afae;
+    &:nth-child(even) {
+      border-right: 0;
+    }
+    &:nth-child(odd) {
+      //padding-left: 0;
+    }
+  }
+  &__pic {
+    width: 39px;
+    height: 43px;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+  &__text {
+    font-size: 18px;
+    font-weight: 600;
+  }
+}

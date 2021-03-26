@@ -35,7 +35,8 @@
 }
 .screen {
   display: flex;
-  //overflow: hidden;
+  //overflow-x: hidden;
+  //overflow-y: auto;
   //height: 800px;
   position: relative;
   z-index: 3;
