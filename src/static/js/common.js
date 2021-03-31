@@ -13,20 +13,6 @@ $(document).ready(function(){
         window.addEventListener('resize', setHeight);
     })();
 
-    var acc = document.getElementsByClassName("accordion");
-    var i;
-
-    for (i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            var panel = this.nextElementSibling;
-            if (panel.style.maxHeight){
-                panel.style.maxHeight = null;
-            } else {
-                panel.style.maxHeight = panel.scrollHeight + "px";
-            }
-        });
-    }
 
     $('.lang').on('click', function (event) {
         event.preventDefault();
@@ -66,6 +52,7 @@ $(document).ready(function(){
     };
 
 //one page scroll
+
     $(function () {
         var
             sections = $('.accordion-box'),
@@ -99,34 +86,31 @@ $(document).ready(function(){
                 }, 1300)
             }
         }
+        if ($("body").hasClass(".accordion-wrapp--customers")) {
+            document.querySelector('.accordion-wrapp--customers')
+                .addEventListener('wheel', function (e) {
+                    var activeSection = sections.filter('.active');
 
-        document.querySelector('.accordion-wrapp--customers')
-            .addEventListener('wheel', function (e) {
-                var activeSection = sections.filter('.active');
+                    if (!inscroll) {
 
-                if (!inscroll) {
-
-                    if (e.deltaY > 0) { //скроллим вниз
-                        if (activeSection.next().length) {
-                            screen = activeSection.next().index();
+                        if (e.deltaY > 0) { //скроллим вниз
+                            if (activeSection.next().length) {
+                                screen = activeSection.next().index();
+                            }
                         }
-                    }
 
-                    if (e.deltaY < 0) { //спроллим вверх
-                        if (activeSection.prev().length) {
-                            screen = activeSection.prev().index()
+                        if (e.deltaY < 0) { //спроллим вверх
+                            if (activeSection.prev().length) {
+                                screen = activeSection.prev().index()
+                            }
                         }
+
+                        scrollToSection(screen);
                     }
+                });
+        }
 
-                    scrollToSection(screen);
-                }
-            });
 
-        // $('.down-arrow').on('click', function(e){
-        //     e.preventDefault();
-        //
-        //     scrollToSection(1);
-        // });
 
         $('.fixed-menu__link')
             .on('click', function(e){
@@ -138,6 +122,22 @@ $(document).ready(function(){
 
 });
 
+$(document).ready(function(){
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    }
+});
 
 
 

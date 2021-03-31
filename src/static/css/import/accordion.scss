@@ -10,14 +10,18 @@
   text-align: left;
   color: $black;
   background: transparent;
+  p {
+    margin-bottom: 10px !important;
+  }
   &-box {
     margin-bottom: 25px;
   }
+
   &-wrapp {
     margin-bottom: 25px;
     &--customers {
       position: relative;
-      height: 300px;
+      height: 400px;
       overflow-y: auto;
 
     }
@@ -63,9 +67,22 @@
   overflow: hidden;
   transition: max-height 0.3s ease-out;
   text-align: center;
+  &--left {
+    text-align: left;
+  }
 }
 
 .accordion-title {
   font-size: 14px;
   padding-left: 45px;
+}
+
+.panel-text {
+  padding: 0 0 0 35px;
+  font-size: 14px;
+  color: $black;
+}
+
+.panel-btn {
+  margin-left: 35px;
 }

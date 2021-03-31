@@ -33,17 +33,21 @@
     }
   }
 }
+
 .screen {
   display: flex;
   overflow-x: hidden;
-  //overflow-y: auto;
-  //height: 860px;
+
   position: relative;
   z-index: 3;
 
   @media(max-width: $container-sm) {
     flex-wrap: wrap;
     height: auto;
+  }
+  &--custom {
+    //overflow-y: auto;
+    min-height: 860px;
   }
   &__banner {
     position: relative;
@@ -64,11 +68,11 @@
     &::before {
       content: "";
       position: absolute;
-      bottom: -160px;
+      bottom: 0;
       left: -210px;
       background: url("../img/banner-logo.png") no-repeat;
       width: 482px;
-      height: 472px;
+      height: 310px;
       z-index: 2;
       @media(max-width: $container-md) {
         display: none;

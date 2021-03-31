@@ -700,6 +700,18 @@ p {
   border: 1px solid #000000;
 }
 
+.btn-dark--border {
+  background: transparent;
+  color: #000000;
+  border: 1px solid #000000;
+}
+
+.btn-dark--border:hover {
+  background: #000000;
+  color: #FFFFFF;
+  border: 1px solid #000000;
+}
+
 .breadcrumbs {
   display: flex;
   margin-bottom: 45px;
@@ -1084,6 +1096,10 @@ p {
   }
 }
 
+.screen--custom {
+  min-height: 860px;
+}
+
 .screen__banner {
   position: relative;
   width: 40%;
@@ -1106,11 +1122,11 @@ p {
 .screen__banner::before {
   content: "";
   position: absolute;
-  bottom: -160px;
+  bottom: 0;
   left: -210px;
   background: url("../img/banner-logo.png") no-repeat;
   width: 482px;
-  height: 472px;
+  height: 310px;
   z-index: 2;
 }
 
@@ -1291,6 +1307,10 @@ p {
   background: transparent;
 }
 
+.accordion p {
+  margin-bottom: 10px !important;
+}
+
 .accordion-box {
   margin-bottom: 25px;
 }
@@ -1301,7 +1321,7 @@ p {
 
 .accordion-wrapp--customers {
   position: relative;
-  height: 300px;
+  height: 400px;
   overflow-y: auto;
 }
 
@@ -1347,9 +1367,116 @@ p {
   text-align: center;
 }
 
+.panel--left {
+  text-align: left;
+}
+
 .accordion-title {
   font-size: 14px;
   padding-left: 45px;
+}
+
+.panel-text {
+  padding: 0 0 0 35px;
+  font-size: 14px;
+  color: #000000;
+}
+
+.panel-btn {
+  margin-left: 35px;
+}
+
+.customers {
+  position: relative;
+  cursor: pointer;
+  padding: 15px 15px 15px 45px;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  transition: 0.5s;
+  text-align: left;
+  color: #000000;
+  background: transparent;
+}
+
+.customers p {
+  margin-bottom: 10px !important;
+}
+
+.customers-box {
+  margin-bottom: 25px;
+}
+
+.customers-wrapp {
+  margin-bottom: 25px;
+}
+
+.customers-wrapp--customers {
+  position: relative;
+  height: 400px;
+  overflow-y: auto;
+}
+
+.customers::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 45px;
+  height: 1px;
+  width: calc(100% - 45px);
+  background: #acacac;
+}
+
+.customers::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  color: #000000;
+  font-size: 55px;
+  font-weight: 100;
+  background: url("../img/plus.png") no-repeat center;
+}
+
+.customers.active::after {
+  background: url("../img/minus.png") no-repeat center;
+}
+
+.customers.active::before {
+  display: none;
+}
+
+.panel {
+  padding: 0 15px;
+  color: #212121;
+  background: transparent;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  text-align: center;
+}
+
+.panel--left {
+  text-align: left;
+}
+
+.customers-title {
+  font-size: 14px;
+  padding-left: 45px;
+}
+
+.panel-text {
+  padding: 0 0 0 35px;
+  font-size: 14px;
+  color: #000000;
+}
+
+.panel-btn {
+  margin-left: 35px;
 }
 
 .footer {
