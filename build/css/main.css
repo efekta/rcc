@@ -625,6 +625,10 @@ p {
 .arrow-scroll {
   display: flex;
   justify-content: center;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .arrow-scroll__wrap {
@@ -657,6 +661,21 @@ p {
   100% {
     transform: translateY(0);
   }
+}
+
+.full-size {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  outline: none;
+  border: none;
+  object-fit: cover;
 }
 
 .btn {
@@ -705,6 +724,65 @@ p {
 
 .breadcrumbs__link:hover {
   text-decoration: underline;
+}
+
+.fixed-menu {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  z-index: 9;
+  transform: translateY(-50%);
+}
+
+.fixed-menu__link {
+  width: 16px;
+  height: 16px;
+  display: block;
+  position: relative;
+}
+
+.fixed-menu__link:after,
+.fixed-menu__link:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.fixed-menu__link:after {
+  width: 6px;
+  height: 6px;
+  background: #898989;
+}
+
+.fixed-menu__link:before {
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  border: 1px solid #000000;
+  opacity: 0;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.fixed-menu__link:hover:before {
+  width: 14px;
+  height: 14px;
+  opacity: 1;
+}
+
+.fixed-menu__item.active .fixed-menu__link:before {
+  width: 14px;
+  height: 14px;
+  opacity: 1;
+}
+
+.fixed-menu__item {
+  margin-bottom: 5px;
 }
 
 .header {
@@ -820,6 +898,7 @@ p {
 
 .nav {
   display: flex;
+  justify-content: space-between;
   margin-bottom: 60px;
 }
 
@@ -993,6 +1072,7 @@ p {
 
 .screen {
   display: flex;
+  overflow-x: hidden;
   position: relative;
   z-index: 3;
 }
@@ -1053,6 +1133,7 @@ p {
 }
 
 .screen__content {
+  position: relative;
   width: 60%;
   padding: 70px 50px;
   background: #FFFFFF;
@@ -1210,8 +1291,18 @@ p {
   background: transparent;
 }
 
+.accordion-box {
+  margin-bottom: 25px;
+}
+
 .accordion-wrapp {
   margin-bottom: 25px;
+}
+
+.accordion-wrapp--customers {
+  position: relative;
+  height: 300px;
+  overflow-y: auto;
 }
 
 .accordion::before {

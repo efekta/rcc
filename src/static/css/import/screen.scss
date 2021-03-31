@@ -35,9 +35,9 @@
 }
 .screen {
   display: flex;
-  //overflow-x: hidden;
+  overflow-x: hidden;
   //overflow-y: auto;
-  //height: 800px;
+  //height: 860px;
   position: relative;
   z-index: 3;
 
@@ -87,6 +87,7 @@
     }
   }
   &__content {
+    position: relative;
     width: 60%;
     padding: 70px 50px;
     background: $white;

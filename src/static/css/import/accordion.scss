@@ -10,8 +10,17 @@
   text-align: left;
   color: $black;
   background: transparent;
+  &-box {
+    margin-bottom: 25px;
+  }
   &-wrapp {
     margin-bottom: 25px;
+    &--customers {
+      position: relative;
+      height: 300px;
+      overflow-y: auto;
+
+    }
   }
   &::before {
     content: "";

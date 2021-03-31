@@ -1,5 +1,6 @@
 .nav {
   display: flex;
+  justify-content: space-between;
   margin-bottom: 60px;
   @media(max-width: $container-md) {
     flex-wrap: wrap;

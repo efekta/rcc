@@ -71,6 +71,11 @@
   display: flex;
   justify-content: center;
 
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+
   &__wrap {
     fill: $black;
     font-size: 36px;
@@ -93,3 +98,17 @@
   }
 }
 
+.full-size {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  outline: none;
+  border: none;
+  object-fit: cover;
+}

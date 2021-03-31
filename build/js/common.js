@@ -31,7 +31,7 @@ $(document).ready(function(){
     $('.lang').on('click', function (event) {
         event.preventDefault();
         $('.lang-submenu').toggleClass('active')
-    })
+    });
 
     $('.burger').on('click', function (){
         $('.nav').toggleClass('nav--show')
@@ -56,4 +56,91 @@ $(document).ready(function(){
         slidesToShow: 2,
         slidesToScroll: 2
     });
+
+
+    window.onload = function() {
+    $('#video').on('ended', function() {
+        window.location.href = '/page.html';
+    });
+
+    };
+
+//one page scroll
+    $(function () {
+        var
+            sections = $('.accordion-box'),
+            display = $('.accordion-wrapp--customers'),
+            screen = 0,
+            inscroll = false;
+
+        sections.filter(':first-child').addClass('active');
+
+        var scrollToSection = function (sectionEq) {
+            var position = 0;
+
+            if (!inscroll) {
+                inscroll = true;
+                screen = sectionEq;
+
+                position = (sections.eq(sectionEq).index() * -100) + '%';
+
+                sections.eq(sectionEq).addClass('active')
+                    .siblings().removeClass('active');
+
+                display.css({
+                    // 'transform' :  'translate3d(0,' + position + ', 0)'
+                });
+
+                setTimeout(function () {
+                    inscroll = false;
+
+                    $('.fixed-menu__item').eq(sectionEq).addClass('active')
+                        .siblings().removeClass('active');
+                }, 1300)
+            }
+        }
+
+        document.querySelector('.accordion-wrapp--customers')
+            .addEventListener('wheel', function (e) {
+                var activeSection = sections.filter('.active');
+
+                if (!inscroll) {
+
+                    if (e.deltaY > 0) { //скроллим вниз
+                        if (activeSection.next().length) {
+                            screen = activeSection.next().index();
+                        }
+                    }
+
+                    if (e.deltaY < 0) { //спроллим вверх
+                        if (activeSection.prev().length) {
+                            screen = activeSection.prev().index()
+                        }
+                    }
+
+                    scrollToSection(screen);
+                }
+            });
+
+        // $('.down-arrow').on('click', function(e){
+        //     e.preventDefault();
+        //
+        //     scrollToSection(1);
+        // });
+
+        $('.fixed-menu__link')
+            .on('click', function(e){
+                e.preventDefault();
+
+                scrollToSection(parseInt($(this).attr('href')));
+            });
+    });
+
 });
+
+
+
+
+
+
+
