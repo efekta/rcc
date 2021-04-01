@@ -30,6 +30,7 @@ a {
     transition: all .3s ease-in-out;
     cursor: pointer;
     &:hover {
+        color: inherit;
         text-decoration: none;
     }
     &:active {

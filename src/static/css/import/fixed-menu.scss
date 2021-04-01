@@ -56,3 +56,54 @@
 .fixed-menu__item {
   margin-bottom: 5px;
 }
+
+.list-group-item {
+  width: 16px;
+  height: 16px;
+  display: block;
+  position: relative;
+  color: transparent;
+  background-color: transparent;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  &::before, &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
+
+  &::after {
+    width: 6px;
+    height: 6px;
+    background: $gray;
+  }
+
+  &::before {
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    border: 1px solid $black;
+    opacity: 0;
+    -webkit-transition: .3s;
+    transition: .3s;
+  }
+}
+
+.list-group-item.active {
+  color: transparent;
+  background-color: transparent;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  &::before {
+    width: 14px;
+    height: 14px;
+    opacity: 1;
+  }
+}

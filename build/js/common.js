@@ -45,99 +45,155 @@ $(document).ready(function(){
 
 
     window.onload = function() {
-    $('#video').on('ended', function() {
-        window.location.href = '/page.html';
-    });
+        $('#video').on('ended', function() {
+            window.location.href = '/page.html';
+        });
 
     };
 
-//one page scroll
+    $('[data-spy="scroll"]').on('activate.bs.scrollspy', function () {
+        // do something...
+    })
 
-    $(function () {
-        var
-            sections = $('.accordion-box'),
-            display = $('.accordion-wrapp--customers'),
-            screen = 0,
-            inscroll = false;
+    var accordion = (function(){
 
-        sections.filter(':first-child').addClass('active');
+        var $accordion = $('.js-accordion');
+        var $accordion_header = $accordion.find('.js-accordion-header');
+        var $accordion_item = $('.js-accordion-item');
 
-        var scrollToSection = function (sectionEq) {
-            var position = 0;
+        // default settings
+        var settings = {
+            // animation speed
+            speed: 400,
 
-            if (!inscroll) {
-                inscroll = true;
-                screen = sectionEq;
+            // close all other accordion items if true
+            oneOpen: false
+        };
 
-                position = (sections.eq(sectionEq).index() * -100) + '%';
-
-                sections.eq(sectionEq).addClass('active')
-                    .siblings().removeClass('active');
-
-                display.css({
-                    // 'transform' :  'translate3d(0,' + position + ', 0)'
+        return {
+            // pass configurable object literal
+            init: function($settings) {
+                $accordion_header.on('click', function() {
+                    accordion.toggle($(this));
                 });
 
-                setTimeout(function () {
-                    inscroll = false;
+                $.extend(settings, $settings);
 
-                    $('.fixed-menu__item').eq(sectionEq).addClass('active')
-                        .siblings().removeClass('active');
-                }, 1300)
+                // ensure only one accordion is active if oneOpen is true
+                if(settings.oneOpen && $('.js-accordion-item.active').length > 1) {
+                    $('.js-accordion-item.active:not(:first)').removeClass('active');
+                }
+
+                // reveal the active accordion bodies
+                $('.js-accordion-item.active').find('> .js-accordion-body').show();
+            },
+            toggle: function($this) {
+
+                if(settings.oneOpen && $this[0] != $this.closest('.js-accordion').find('> .js-accordion-item.active > .js-accordion-header')[0]) {
+                    $this.closest('.js-accordion')
+                        .find('> .js-accordion-item')
+                        .removeClass('active')
+                        .find('.js-accordion-body')
+                        .slideUp()
+                }
+
+                // show/hide the clicked accordion item
+                $this.closest('.js-accordion-item').toggleClass('active');
+                $this.next().stop().slideToggle(settings.speed);
             }
         }
-        if ($("body").hasClass(".accordion-wrapp--customers")) {
-            document.querySelector('.accordion-wrapp--customers')
-                .addEventListener('wheel', function (e) {
-                    var activeSection = sections.filter('.active');
+    })();
+    accordion.init({ speed: 300, oneOpen: true });
 
-                    if (!inscroll) {
-
-                        if (e.deltaY > 0) { //скроллим вниз
-                            if (activeSection.next().length) {
-                                screen = activeSection.next().index();
-                            }
-                        }
-
-                        if (e.deltaY < 0) { //спроллим вверх
-                            if (activeSection.prev().length) {
-                                screen = activeSection.prev().index()
-                            }
-                        }
-
-                        scrollToSection(screen);
-                    }
-                });
+    $('.nav__link').each(function(i) {
+        if (this.href == document.location.href) {
+            // Присваиваем класс активному пункту меню li, а не ссылке.
+            // ul.nav li.nav_item.nav_active a.nav_link
+            $(this).parent('.nav__item').addClass('active');
         }
-
-
-
-        $('.fixed-menu__link')
-            .on('click', function(e){
-                e.preventDefault();
-
-                scrollToSection(parseInt($(this).attr('href')));
-            });
     });
+
+//one page scroll
+
+    // $(function () {
+    //     var
+    //         sections = $('.accordion-box'),
+    //         display = $('.accordion-wrapp--customers'),
+    //         screen = 0,
+    //         inscroll = false;
+    //
+    //     sections.filter(':first-child').addClass('active');
+    //
+    //     var scrollToSection = function (sectionEq) {
+    //         var position = 0;
+    //
+    //         if (!inscroll) {
+    //             inscroll = true;
+    //             screen = sectionEq;
+    //
+    //             position = (sections.eq(sectionEq).index() * -100) + '%';
+    //
+    //             sections.eq(sectionEq).addClass('active')
+    //                 .siblings().removeClass('active');
+    //
+    //             display.css({
+    //                 // 'transform' :  'translate3d(0,' + position + ', 0)'
+    //             });
+    //
+    //             setTimeout(function () {
+    //                 inscroll = false;
+    //
+    //                 $('.fixed-menu__item').eq(sectionEq).addClass('active')
+    //                     .siblings().removeClass('active');
+    //             }, 1300)
+    //         }
+    //     }
+    //     if ($("body").hasClass(".accordion-wrapp--customers")) {
+    //         document.querySelector('.accordion-wrapp--customers')
+    //             .addEventListener('wheel', function (e) {
+    //                 var activeSection = sections.filter('.active');
+    //
+    //                 if (!inscroll) {
+    //
+    //                     if (e.deltaY > 0) { //скроллим вниз
+    //                         if (activeSection.next().length) {
+    //                             screen = activeSection.next().index();
+    //                         }
+    //                     }
+    //
+    //                     if (e.deltaY < 0) { //спроллим вверх
+    //                         if (activeSection.prev().length) {
+    //                             screen = activeSection.prev().index()
+    //                         }
+    //                     }
+    //
+    //                     scrollToSection(screen);
+    //                 }
+    //             });
+    //     }
+    //
+    //
+    //
+    //     $('.fixed-menu__link')
+    //         .on('click', function(e){
+    //             e.preventDefault();
+    //
+    //             scrollToSection(parseInt($(this).attr('href')));
+    //         });
+    // });
+
+
+
+
 
 });
 
 $(document).ready(function(){
-    var acc = document.getElementsByClassName("accordion");
-    var i;
 
-    for (i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function () {
-            this.classList.toggle("active");
-            var panel = this.nextElementSibling;
-            if (panel.style.maxHeight) {
-                panel.style.maxHeight = null;
-            } else {
-                panel.style.maxHeight = panel.scrollHeight + "px";
-            }
-        });
-    }
+
 });
+
+
 
 
 

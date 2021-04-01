@@ -29,6 +29,9 @@
   @media(max-width: $container-sm) {
     max-width: 100%;
   }
+  @media(min-width: 1600px) {
+    max-width: 1600px;
+  }
 }
 
 .content {

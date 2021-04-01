@@ -6,7 +6,7 @@
     <title>Карьера</title>
     <link rel="stylesheet" href="libs/slick/slick.css">
     <link rel="stylesheet" href="libs/slick/slick-theme.css">
-    <!--link(rel="stylesheet" href="libs/onepage-scroll/onepage-scroll.css")-->
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
@@ -39,15 +39,15 @@
               <li class="nav__item"><a class="nav__link" href="about.html">О компании</a></li>
               <!--li.nav__item-->
               <!--    a.nav__link(href="customers.html") Наши клиенты-->
-              <li class="nav__item"><a class="nav__link">Юридические услуги</a></li>
+              <li class="nav__item"><a class="nav__link" href="legal-services.html">Юридические услуги</a></li>
               <li class="nav__item"><a class="nav__link" href="financial-services.html">Финансовые услуги</a></li>
-              <li class="nav__item"><a class="nav__link">Услуги в сфере IT</a></li>
+              <li class="nav__item"><a class="nav__link" href="it-services.html">Услуги в сфере IT</a></li>
               <li class="nav__item"><a class="nav__link" href="executive-services.html">Представительские услуги</a></li>
               <li class="nav__item"><a class="nav__link" href="career.html">Карьера</a></li>
             </ul>
           </header>
         </div>
-        <div class="screen-wrapp">
+        <div class="screen-wrapp"><img class="screen-bg screen-bg--left" src="img/bg-left.png" alt=""><img class="screen-bg screen-bg--right" src="img/bg-right.png" alt="">
           <div class="container">
             <div class="screen screen--custom">
               <div class="screen__banner"><img src="img/banner_2.jpg" alt="">
@@ -58,23 +58,61 @@
               </div>
               <div class="screen__content">
                 <p>Real Consulting Club – динамично развивающийся международный проект, дающий своим сотрудникам неограниченные возможности в части карьерного роста, повышения квалификации, получения опыта в сфере международных финансов и стабильного роста доходов.</p>
-                <div class="accordion-wrapp">
-                  <p class="accordion-title">Мы с радостью ждем в нашу команду:</p>
-                  <button class="accordion">юристов с международным опытом работы;</button>
-                  <div class="panel"><a class="btn btn-dark btn-dark--border" href="">Описание вакансии</a><a class="btn btn-dark" href="">Отправить резюме</a></div>
-                  <button class="accordion">IT специалистов (программистов, служба support, аналитиков, специалистов по базам данных);</button>
-                  <div class="panel"><a class="btn btn-dark btn-dark--border" href="">Описание вакансии</a><a class="btn btn-dark" href="">Отправить резюме</a></div>
-                  <button class="accordion">энтузиастов в сфере продвижения финтех проектов;</button>
-                  <div class="panel"><a class="btn btn-dark btn-dark--border" href="">Описание вакансии</a><a class="btn btn-dark" href="">Отправить резюме</a></div>
-                  <button class="accordion">специалистов по интеграции с платежными системами по API;</button>
-                  <div class="panel"><a class="btn btn-dark btn-dark--border" href="">Описание вакансии</a><a class="btn btn-dark" href="">Отправить резюме</a></div>
-                  <button class="accordion">маркетологов в сфере онлайн продвижения финансовых продуктов;</button>
-                  <div class="panel"><a class="btn btn-dark btn-dark--border" href="">Описание вакансии</a><a class="btn btn-dark" href="">Отправить резюме</a></div>
-                  <button class="accordion">дилеров и дистрибьюторов для продвижения финансовых продуктов оффлайн</button>
-                  <div class="panel"><a class="btn btn-dark btn-dark--border" href="">Описание вакансии</a><a class="btn btn-dark" href="">Отправить резюме</a></div>
+                <p class="accordion-title">Мы с радостью ждем в нашу команду:</p>
+                <div class="accordion js-accordion">
+                  <div class="accordion__item js-accordion-item">
+                    <div class="accordion-header js-accordion-header">Юристов с международным опытом работы;</div>
+                    <div class="accordion-body js-accordion-body">
+                      <div class="accordion-body__contents">
+                        <div class="panel"><a class="btn btn-dark btn-dark--border" href="">Описание вакансии</a><a class="btn btn-dark" href="">Отправить резюме</a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion__item js-accordion-item">
+                    <div class="accordion-header js-accordion-header">IT специалистов (программистов, служба support, аналитиков, специалистов по базам данных);</div>
+                    <div class="accordion-body js-accordion-body">
+                      <div class="accordion-body__contents">
+                        <div class="panel"><a class="btn btn-dark btn-dark--border" href="">Описание вакансии</a><a class="btn btn-dark" href="">Отправить резюме</a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion__item js-accordion-item">
+                    <div class="accordion-header js-accordion-header">Энтузиастов в сфере продвижения финтех проектов;</div>
+                    <div class="accordion-body js-accordion-body">
+                      <div class="accordion-body__contents">
+                        <div class="panel"><a class="btn btn-dark btn-dark--border" href="">Описание вакансии</a><a class="btn btn-dark" href="">Отправить резюме</a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion__item js-accordion-item">
+                    <div class="accordion-header js-accordion-header">Специалистов по интеграции с платежными системами по API;</div>
+                    <div class="accordion-body js-accordion-body">
+                      <div class="accordion-body__contents">
+                        <div class="panel"><a class="btn btn-dark btn-dark--border" href="">Описание вакансии</a><a class="btn btn-dark" href="">Отправить резюме</a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion__item js-accordion-item">
+                    <div class="accordion-header js-accordion-header">Маркетологов в сфере онлайн продвижения финансовых продуктов;</div>
+                    <div class="accordion-body js-accordion-body">
+                      <div class="accordion-body__contents">
+                        <div class="panel"><a class="btn btn-dark btn-dark--border" href="">Описание вакансии</a><a class="btn btn-dark" href="">Отправить резюме</a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion__item js-accordion-item">
+                    <div class="accordion-header js-accordion-header">Дилеров и дистрибьюторов для продвижения финансовых продуктов оффлайн</div>
+                    <div class="accordion-body js-accordion-body">
+                      <div class="accordion-body__contents">
+                        <div class="panel"><a class="btn btn-dark btn-dark--border" href="">Описание вакансии</a><a class="btn btn-dark" href="">Отправить резюме</a></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <p>Наш сервис позволяет финансовым учреждениям из разных стран получить весь спектр узкоспециализированных и высокотехнологичных услуг со стороны одного консалтера, что позволяет нашим клиентам динамично развиваться, не теряя время на поиск профессиональных партнеров с разными компетенциями и в разных юрисдикциях.</p>
-                <p>Помимо обслуживания клиентов  в части оказания разовых услуг мы осуществляем постоянное комплексное обслуживание финансовых бизнесов и отрабатываем самые масштабные и долгосрочные запросы наших клиентов.</p>
+                <div class="mt-3">
+                  <p>Наш сервис позволяет финансовым учреждениям из разных стран получить весь спектр узкоспециализированных и высокотехнологичных услуг со стороны одного консалтера, что позволяет нашим клиентам динамично развиваться, не теряя время на поиск профессиональных партнеров с разными компетенциями и в разных юрисдикциях.</p>
+                  <p>Помимо обслуживания клиентов  в части оказания разовых услуг мы осуществляем постоянное комплексное обслуживание финансовых бизнесов и отрабатываем самые масштабные и долгосрочные запросы наших клиентов.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -98,6 +136,7 @@
     <script src="libs/maskedinput/jquery.maskedinput.min.js"></script>
     <script src="libs/slick/slick.min.js"></script>
     <script src="libs/fontawesome/svg-with-js/js/fontawesome-all.min.js"></script>
+    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
     <script src="js/common.js"></script>
   </body>
 </html>

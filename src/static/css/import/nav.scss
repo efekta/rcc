@@ -29,8 +29,10 @@
     }
   }
   &__link {
+    display: inline-block;
     font-size: 18px;
     font-weight: 600;
+    padding-bottom: 6px;
   }
 }
 
@@ -52,4 +54,11 @@
       right: 0;
     }
   }
+}
+
+.nav__item.active {
+    .nav__link {
+      border-bottom: 1px solid $black;
+    }
+
 }
