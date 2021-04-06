@@ -1,18 +1,63 @@
 footer.footer
-    ul.socials.socials-mob
-        li.socials__item
-            a.socials__link
-                i.socials__icon.fab.fa-instagram
-        li.socials__item
-            a.socials__link
-                i.socials__icon.fab.fa-twitter
-        li.socials__item
-            a.socials__link
-                i.socials__icon.fab.fa-facebook-f
-    ul.store.store-mob
-        li.store__item
-            a.store__link
-                img.store__icon(src="img/app-store.png", alt="")
-        li.store__item
-            a.store__link
-                img.store__icon(src="img/gs-store.png", alt="")
+    .container
+        .footer-row
+            ul.details
+                li.details__item
+                    p.details__title.text-bold Registration and tax numbers
+                li.details__item
+                    p.details__title.text-bold IČO:
+                    p.details__desc 28164644
+                li.details__item
+                    p.details__title.text-bold VAT:
+                    p.details__desc CZ28164644
+                //li.details__item
+                //    p.details__title.text-bold КПП
+                //    p.details__desc 526001001
+                //li.details__item
+                //    p.details__title.text-bold БИК
+                //    p.details__desc 048073770
+                //li.details__item
+                //    p.details__title.text-bold Расчетный счет
+                //    p.details__desc 40702810501310001452
+                //li.details__item
+                //    p.details__title.text-bold Корр. счет
+                //    p.details__desc 30101810600000000770
+                //li.details__item
+                //    p.details__title ФИЛИАЛ ПАО "БАНК УРАЛСИБ" В Г.УФА
+            .details
+                li.details__item
+                    p.details__title.text-bold Name
+                    p.details__title «RCC» s.r.o.
+
+                li.details__item
+                    p.details__title.text-bold Registered office
+                    p.details__desc Na hutích 581/1, Dejvice, 160 00 Praha 6, Czech Republic
+
+            ul.details
+                li.details__item.details__item--contacts
+                    p.details__title.text-bold Site
+                    a.details__desc(href="https://realcc.ru/it.php") https://realcc.ru/it.php
+                li.details__item.details__item--contacts
+                    p.details__title.text-bold Email
+                    a.details__desc(href="mailto:info@realcc.ru") info@realcc.ru
+        .row
+            .col-6
+                ul.socials.socials-mob
+                    li.socials__item
+                        a.socials__link
+                            i.socials__icon.fab.fa-instagram
+                    li.socials__item
+                        a.socials__link
+                            i.socials__icon.fab.fa-twitter
+                    li.socials__item
+                        a.socials__link
+                            i.socials__icon.fab.fa-facebook-f
+            .col-6
+                ul.store.store-mob
+                    li.store__item
+                        a.store__link
+                            img.store__icon(src="img/app-store.png", alt="")
+                    li.store__item
+                        a.store__link
+                            img.store__icon(src="img/gs-store.png", alt="")
+

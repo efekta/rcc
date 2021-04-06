@@ -45,8 +45,12 @@ $(document).ready(function(){
 
 
     window.onload = function() {
-        $('#video').on('ended', function() {
-            window.location.href = '/page.html';
+        $('#video_ru').on('ended', function() {
+            window.location.href = '/page-ru.html';
+        });
+
+        $('#video_en').on('ended', function() {
+            window.location.href = '/page-en.html';
         });
 
     };
@@ -112,84 +116,6 @@ $(document).ready(function(){
             $(this).parent('.nav__item').addClass('active');
         }
     });
-
-//one page scroll
-
-    // $(function () {
-    //     var
-    //         sections = $('.accordion-box'),
-    //         display = $('.accordion-wrapp--customers'),
-    //         screen = 0,
-    //         inscroll = false;
-    //
-    //     sections.filter(':first-child').addClass('active');
-    //
-    //     var scrollToSection = function (sectionEq) {
-    //         var position = 0;
-    //
-    //         if (!inscroll) {
-    //             inscroll = true;
-    //             screen = sectionEq;
-    //
-    //             position = (sections.eq(sectionEq).index() * -100) + '%';
-    //
-    //             sections.eq(sectionEq).addClass('active')
-    //                 .siblings().removeClass('active');
-    //
-    //             display.css({
-    //                 // 'transform' :  'translate3d(0,' + position + ', 0)'
-    //             });
-    //
-    //             setTimeout(function () {
-    //                 inscroll = false;
-    //
-    //                 $('.fixed-menu__item').eq(sectionEq).addClass('active')
-    //                     .siblings().removeClass('active');
-    //             }, 1300)
-    //         }
-    //     }
-    //     if ($("body").hasClass(".accordion-wrapp--customers")) {
-    //         document.querySelector('.accordion-wrapp--customers')
-    //             .addEventListener('wheel', function (e) {
-    //                 var activeSection = sections.filter('.active');
-    //
-    //                 if (!inscroll) {
-    //
-    //                     if (e.deltaY > 0) { //скроллим вниз
-    //                         if (activeSection.next().length) {
-    //                             screen = activeSection.next().index();
-    //                         }
-    //                     }
-    //
-    //                     if (e.deltaY < 0) { //спроллим вверх
-    //                         if (activeSection.prev().length) {
-    //                             screen = activeSection.prev().index()
-    //                         }
-    //                     }
-    //
-    //                     scrollToSection(screen);
-    //                 }
-    //             });
-    //     }
-    //
-    //
-    //
-    //     $('.fixed-menu__link')
-    //         .on('click', function(e){
-    //             e.preventDefault();
-    //
-    //             scrollToSection(parseInt($(this).attr('href')));
-    //         });
-    // });
-
-
-
-
-
-});
-
-$(document).ready(function(){
-
 
 });
 

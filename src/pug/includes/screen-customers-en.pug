@@ -1,0 +1,35 @@
+.screen.screen--custom
+    #fixed-menu.list-group.fixed-menu
+        a.list-group-item.list-group-item-action.active(href='#customers-list-1')
+        a.list-group-item.list-group-item-action(href='#customers-list-2')
+        a.list-group-item.list-group-item-action(href='#customers-list-3')
+    .screen__banner
+        img(src="img/banner_4.jpg" alt="")
+        .banner-content
+            h1.banner-content__title.banner-content__title--inner CLIENTS WHOSE BUSINESS WE SERVE IN TERMS OF REPRESENTATIVE FUNCTIONS
+            p.banner-content__desc We are currently providing comprehensive services to the Gold Fort group of companies (Czech Republic, Estonia, Slovakia, Turkey). One of the companies of the group is a holder of financial licenses "Providing a virtual currency services:" and "operating as a financial institution"
+    .screen__content
+        ol.breadcrumbs
+            li.breadcrumbs__item
+                a(href="page-en.html").breadcrumbs__link Home
+            li.breadcrumbs__item
+                a(href="customers-en.html").breadcrumbs__link Our Clients
+        p At the moment we provide complex services for the Gold Fort group of companies (Czech Republic, Estonia, Slovakia, Turkey), one of the companies of which owns financial licenses "Providing a virtual currency services" and "operating as a financial institution".
+        p.customers-title Our functionality in the project:
+
+        .customers.scrollspy-example(data-spy='scroll' data-target='#fixed-menu' data-offset='0')
+            ul.customers-list
+                li#customers-list-1.customers-item Opening of branches and representative offices;
+                li.customers-item Passporting licenses in the EU, Turkey, Russia, Kazakhstan, UAE;
+                li.customers-item Opening settlement and segregated accounts in the above-mentioned jurisdictions;
+                li#customers-list-2.customers-item Connecting acquirers;
+                li.customers-item Obtaining and confirming the PCI DSS Certificate;
+                li.customers-item Providing consulting services to clients located outside Estonia and the Czech Republic;
+                li#customers-list-3.customers-item
+                    p Searching and negotiating with corporate and private clients;
+                    p Connection of corporate clients-owners of online services via API (including white label agreements);
+                li.customers-item Conducting a set of online and offline marketing activities;
+
+        .arrow-scroll
+            a.arrow-scroll__wrap.arrow-scroll__wrap_animated(href="executive-services-en.html")
+                i.far.fa-chevron-down

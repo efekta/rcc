@@ -1,4 +1,4 @@
-include ../includes/mixins.pug
+include ../includes/setting/mixins
 doctype html
 block vars
 html(lang="ru-RU")
@@ -6,7 +6,7 @@ html(lang="ru-RU")
         meta(charset="UTF-8")
         meta(name="viewport" , content="width=device-width, initial-scale=1")
         title #{title}
-        include ../includes/links.pug
+        include ../includes/setting/links
     body
         .app
             .content
@@ -17,8 +17,7 @@ html(lang="ru-RU")
                     img.screen-bg.screen-bg--right(src="img/bg-right.png" alt="")
                     .container
                         block content
-            .container
-                block footer
+            block footer
 
 
         script(src="libs/jquery/jquery-3.4.1.min.js")
